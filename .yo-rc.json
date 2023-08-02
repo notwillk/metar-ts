@@ -1,0 +1,17 @@
+{
+  "@anansi/generator-js": {
+    "githubOrg": "notwillk",
+    "rootPath": "src",
+    "assetPath": "dist",
+    "serverPath": "dist-server",
+    "appName": "metar-ts",
+    "githubDomain": "github.com",
+    "testing": true,
+    "features": [
+      "testing",
+      "CI"
+    ],
+    "badges": "[![CircleCI](https://circleci.com/gh/notwillk/metar-ts.svg?style=shield)](https://circleci.com/gh/notwillk/metar-ts)\n\n[![npm downloads](https://img.shields.io/npm/dm/metar-ts.svg?style=flat-square)](https://www.npmjs.com/package/metar-ts)\n[![gzip size](https://img.badgesize.io/https://unpkg.com/metar-ts?compression=gzip&style=flat-square)](https://unpkg.com/metar-ts)\n[![npm version](https://img.shields.io/npm/v/metar-tss.svg?style=flat-square)](https://www.npmjs.com/package/metar-ts)\n[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)",
+    "libPath": "lib"
+  }
+}

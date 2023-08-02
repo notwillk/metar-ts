@@ -1,0 +1,83 @@
+{
+  "name": "metar-ts",
+  "version": "0.0.1",
+  "packageManager": "yarn@3.6.1",
+  "description": "metar-ts - An Anansi project",
+  "scripts": {
+    "lint": "eslint src --ext .ts,.tsx",
+    "format": "npm run lint --fix",
+    "test:type": "tsc",
+    "test": "NODE_ENV=test jest",
+    "test:ci": "run test -- --ci",
+    "test:watch": "run test -- --watch",
+    "test:coverage": "run test -- --coverage",
+    "build:lib": "NODE_ENV=production babel src --out-dir lib --source-maps inline --extensions '.ts,.tsx,.js' --ignore '**/__tests__/**' --ignore '**/*.d.ts'",
+    "build:types": "tsc --build",
+    "build:clean": "rimraf lib dist *.tsbuildinfo",
+    "build": "run build:lib && run build:types",
+    "dev": "run build:lib -w",
+    "prepack": "run build",
+    "build:bundle": "rollup -c",
+    "prepublishOnly": "run build:bundle"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/notwillk/metar-ts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/notwillk/metar-ts/issues"
+  },
+  "homepage": "https://github.com/notwillk/metar-ts#readme",
+  "keywords": [
+    "anansi"
+  ],
+  "devDependencies": {
+    "@anansi/babel-preset": "*",
+    "@anansi/browserslist-config": "*",
+    "@anansi/eslint-plugin": "*",
+    "@anansi/jest-preset": "*",
+    "@babel/cli": "*",
+    "@babel/core": "*",
+    "@types/jest": "*",
+    "@types/react-test-renderer": "*",
+    "@typescript-eslint/eslint-plugin": "^5.11.0 || ^6.0.0",
+    "@typescript-eslint/parser": "*",
+    "@zerollup/ts-transform-paths": "*",
+    "eslint": "^7.0.0 || ^8.0.0",
+    "eslint-plugin-babel": "^5.3.1",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-prettier": "^4.0.0 || ^5.0.0",
+    "eslint-plugin-react": "^7.22.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "jest": "*",
+    "jest-environment-jsdom": "*",
+    "prettier": "^2.2.1 || ^3.0.0",
+    "react-test-renderer": "*",
+    "rimraf": "*",
+    "rollup": "2",
+    "rollup-plugin-babel": "*",
+    "rollup-plugin-commonjs": "*",
+    "rollup-plugin-filesize": "*",
+    "rollup-plugin-json": "*",
+    "rollup-plugin-node-resolve": "*",
+    "rollup-plugin-replace": "*",
+    "rollup-plugin-terser": "*",
+    "typescript": "*"
+  },
+  "dependencies": {
+    "@babel/runtime": "*"
+  },
+  "sideEffects": false,
+  "main": "dist/index.cjs.js",
+  "module": "lib/index.js",
+  "unpkg": "dist/index.umd.min.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "src",
+    "dist",
+    "lib",
+    "LICENSE",
+    "README.md"
+  ],
+  "license": "MIT"
+}
